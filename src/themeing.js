@@ -1,0 +1,53 @@
+import { createTheme } from '@fluentui/react';
+
+export const symplrTheme = createTheme({
+  palette: {
+    themePrimary: '#ef4b24',
+    themeLighterAlt: '#fef7f6',
+    themeLighter: '#fde1da',
+    themeLight: '#fac7bb',
+    themeTertiary: '#f69278',
+    themeSecondary: '#f2613d',
+    themeDarkAlt: '#d84520',
+    themeDark: '#b63a1b',
+    themeDarker: '#862b14',
+    neutralLighterAlt: '#faf9f8',
+    neutralLighter: '#f3f2f1',
+    neutralLight: '#edebe9',
+    neutralQuaternaryAlt: '#e1dfdd',
+    neutralQuaternary: '#d0d0d0',
+    neutralTertiaryAlt: '#c8c6c4',
+    neutralTertiary: '#bab8b7',
+    neutralSecondary: '#a3a2a0',
+    neutralPrimaryAlt: '#8d8b8a',
+    neutralPrimary: '#323130',
+    neutralDark: '#605e5d',
+    black: '#494847',
+    white: '#ffffff',
+  }});
+
+  export const purpleTheme = createTheme({
+    palette: {
+      themePrimary: '#5409ab',
+      themeLighterAlt: '#fef7f6',
+      themeLighter: '#fde1da',
+      themeLight: '#fac7bb',
+      themeTertiary: '#f69278',
+      themeSecondary: '#f2613d',
+      themeDarkAlt: '#d84520',
+      themeDark: '#b63a1b',
+      themeDarker: '#862b14',
+      neutralLighterAlt: '#faf9f8',
+      neutralLighter: '#f3f2f1',
+      neutralLight: '#edebe9',
+      neutralQuaternaryAlt: '#e1dfdd',
+      neutralQuaternary: '#d0d0d0',
+      neutralTertiaryAlt: '#c8c6c4',
+      neutralTertiary: '#bab8b7',
+      neutralSecondary: '#a3a2a0',
+      neutralPrimaryAlt: '#8d8b8a',
+      neutralPrimary: '#323130',
+      neutralDark: '#605e5d',
+      black: '#494847',
+      white: '#ffffff',
+    }});

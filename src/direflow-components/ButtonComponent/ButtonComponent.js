@@ -1,37 +1,42 @@
+import { DefaultButton } from '@fluentui/react';
+import { primaryStyles, standardStyles } from 'office-ui-fabric-react/lib/components/Button/ButtonThemes';
 import PropTypes from 'prop-types';
 import React from 'react';
-import {
-    DefaultButton,
-    PrimaryButton
-} from '@fluentui/react';
+import { symplrTheme } from '../../themeing';
 
 const ButtonComponent = (props) => {
     const {
         isPrimaryButton,
-        label
+        label,
+        theme
     } = props;
 
     const defaultButtonProps = {
         text: label
     };
 
+    const styleFn = isPrimaryButton ? primaryStyles : standardStyles;
+
+    console.log(`primary? ${isPrimaryButton} theme`, theme);
+    console.log(`primary? ${isPrimaryButton} themeJSON`, JSON.stringify(theme));
+
     return (
-        isPrimaryButton ? (
-            <PrimaryButton {...defaultButtonProps} />
-        ) : (
-            <DefaultButton {...defaultButtonProps} />
-        )
+        <DefaultButton {...defaultButtonProps} primary={isPrimaryButton} styles={styleFn(theme)}/>
     );
 };
 
 ButtonComponent.propTypes = {
     isPrimaryButton: PropTypes.bool,
-    label: PropTypes.string
+    label: PropTypes.string,
+    theme: PropTypes.shape({
+        palette: PropTypes.object
+    })
 };
 
 ButtonComponent.defaultProps = {
     isPrimaryButton: false,
-    label: ''
+    label: '',
+    theme: symplrTheme
 };
 
 export default ButtonComponent;

@@ -10,7 +10,9 @@
  */
 
 import ButtonComponent from './direflow-components/ButtonComponent/ButtonComponent';
+import SliderComponent from './direflow-components/SliderComponent/SliderComponent';
 
 export {
-  ButtonComponent
+  ButtonComponent,
+  SliderComponent
 };
