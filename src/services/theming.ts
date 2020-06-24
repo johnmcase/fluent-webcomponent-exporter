@@ -26,9 +26,9 @@ export const symplrTheme = createTheme({
     white: '#ffffff',
   }});
 
-  export const purpleTheme = createTheme({
+  export const darkTheme = createTheme({
     palette: {
-      themePrimary: '#5409ab',
+      themePrimary: '#ef4b24',
       themeLighterAlt: '#fef7f6',
       themeLighter: '#fde1da',
       themeLight: '#fac7bb',
@@ -37,17 +37,17 @@ export const symplrTheme = createTheme({
       themeDarkAlt: '#d84520',
       themeDark: '#b63a1b',
       themeDarker: '#862b14',
-      neutralLighterAlt: '#faf9f8',
-      neutralLighter: '#f3f2f1',
-      neutralLight: '#edebe9',
-      neutralQuaternaryAlt: '#e1dfdd',
-      neutralQuaternary: '#d0d0d0',
-      neutralTertiaryAlt: '#c8c6c4',
-      neutralTertiary: '#bab8b7',
-      neutralSecondary: '#a3a2a0',
-      neutralPrimaryAlt: '#8d8b8a',
-      neutralPrimary: '#323130',
-      neutralDark: '#605e5d',
-      black: '#494847',
-      white: '#ffffff',
+      neutralLighterAlt: '#28211a',
+      neutralLighter: '#312921',
+      neutralLight: '#3f352c',
+      neutralQuaternaryAlt: '#483d33',
+      neutralQuaternary: '#4f4439',
+      neutralTertiaryAlt: '#6d6053',
+      neutralTertiary: '#c8c8c8',
+      neutralSecondary: '#d0d0d0',
+      neutralPrimaryAlt: '#dadada',
+      neutralPrimary: '#ffffff',
+      neutralDark: '#f4f4f4',
+      black: '#f8f8f8',
+      white: '#1f1914',
     }});
