@@ -1,6 +1,4 @@
-import {
-    DireflowComponent
-} from 'direflow-component';
+import { DireflowComponent } from 'direflow-component';
 import ButtonComponent from './ButtonComponent';
 
 export default DireflowComponent.create({

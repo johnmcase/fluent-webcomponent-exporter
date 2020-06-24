@@ -8,3 +8,5 @@
  * !This file cannot be removed.
  * It can be left blank if not needed.
  */
+
+import ButtonComponent from './direflow-components/ButtonComponent';
