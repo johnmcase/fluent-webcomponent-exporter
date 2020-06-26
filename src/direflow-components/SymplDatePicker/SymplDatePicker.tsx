@@ -12,7 +12,6 @@ export const DatePickerComopnent: React.FC<IDatePickerProps> = (props) => {
       }
   });
 
-  console.log('datepicker props ', myProps);
   return (
       <DatePicker {...myProps} />
   );

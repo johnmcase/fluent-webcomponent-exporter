@@ -1,10 +1,10 @@
 import { DireflowComponent } from 'direflow-component';
-import { ButtonComponent } from './ButtonComponent';
+import { ButtonComponent } from './SymplButton';
 
 export default DireflowComponent.create({
     component: ButtonComponent,
     configuration: {
-        tagname: 'symplr-button',
+        tagname: 'sympl-button',
         useShadow: false
     }
 });

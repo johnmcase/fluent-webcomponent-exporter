@@ -1,10 +1,10 @@
 import { DireflowComponent } from 'direflow-component';
-import { DatePickerComopnent } from './DatePickerComponent';
+import { DatePickerComopnent } from './SymplDatePicker';
 
 export default DireflowComponent.create({
     component: DatePickerComopnent,
     configuration: {
-        tagname: 'symplr-date-picker',
+        tagname: 'sympl-datepicker',
         useShadow: false
     }
 });
