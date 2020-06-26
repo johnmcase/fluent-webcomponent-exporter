@@ -8,14 +8,86 @@
   <link rel="stylesheet" type="text/css" href="index.css">
   <title>Direflow Demo</title>
   <!-- <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css" /> -->
+  <style>
+    .custom-style-btn {
+      background-color: greenyellow;
+    }
+  </style>
 </head>
 
 <body>
   <div>
-    <symplr-button label="Default Button"></symplr-button>
-    <symplr-button label="Primary Button" isPrimaryButton="true"></symplr-button>
-    <symplr-date-picker placeholder="Select a Date...", label="Birth Date"></symplr-date-picker>
+    <h1>Symplr Webcomponent Library</h1>
+    <h2>Direflow Project</h2>
+    <p>Demonstrates web components compiled with Direflow consumed in pure HTML</p>
+
+    <symplr-button text="Default Button"></symplr-button>
+    <symplr-button text="Primary Button" primary="true"></symplr-button>
+    <symplr-button text="Split Button" id="splitBtn" split="0"></symplr-button>
+    <symplr-button text="CustomStyle JS" id="customStyle"></symplr-button>
+    <symplr-button text="CustomStyle CSS" className="custom-style-btn"></symplr-button>
+    <symplr-date-picker placeholder="Select a Date...", label="Date Picker"></symplr-date-picker>
+    <symplr-date-picker placeholder="Select a Date...", label="Formatted Date" id="formattedDatePicker"></symplr-date-picker>
+    <symplr-date-picker placeholder="Select a Date...", label="Date With Value" id="valueDatePicker"></symplr-date-picker>
   </div>
 </body>
 
 </html>
+<script>
+  function formatSplitButton(id) {
+    const splitBtn = document.querySelector('#' + id);
+    splitBtn.onClick = () => { alert('main button clicked!') };
+    splitBtn.menuProps = {
+      items: [
+        {
+          key: 'emailMessage',
+          text: 'Email message',
+          iconProps: { iconName: 'Mail' },
+        },
+        {
+          key: 'calendarEvent',
+          text: 'Calendar event',
+          iconProps: { iconName: 'Calendar' },
+        },
+      ],
+    }
+  }
+
+  function addCustomStyleToButton(id) {
+    const customStyle = document.querySelector('#' + id);
+    customStyle.styles = {
+      label: {
+        'color': '#FF0000',
+        'font-weight': '100'
+      }
+    };
+  }
+
+  function addFormattingToDatePicker(id) {
+    const formattedDatePicker = document.querySelector('#' + id);
+    formattedDatePicker.formatDate = (date) => {
+      return date.getDate() + '/' + (date.getMonth() + 1) + '/' + (date.getFullYear() % 100);
+    }
+    formattedDatePicker.parseDateFormatString = (val) => {
+      const date = val || new Date();
+      const values = (val || '').trim().split('/');
+      const day = val.length > 0 ? Math.max(1, Math.min(31, parseInt(values[0], 10))) : date.getDate();
+      const month = val.length > 1 ? Math.max(1, Math.min(12, parseInt(values[1], 10))) - 1 : date.getMonth();
+      let year = val.length > 2 ? parseInt(values[2], 10) : date.getFullYear();
+      if (year < 100) {
+        year += date.getFullYear() - (date.getFullYear() % 100);
+      }
+      return new Date(year, month, day);
+    }
+  }
+
+  function setValueOnDatePicker(id, value) {
+    const valueDatePicker = document.querySelector('#' + id);
+    valueDatePicker.value = value;
+  }
+
+  formatSplitButton('splitBtn');
+  addCustomStyleToButton('customStyle');
+  addFormattingToDatePicker('formattedDatePicker');
+  setValueOnDatePicker('valueDatePicker', new Date(1776, 6, 4));
+</script>

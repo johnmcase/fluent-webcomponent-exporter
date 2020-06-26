@@ -1,31 +1,32 @@
-import { DefaultButton, ITheme } from '@fluentui/react';
-import { primaryStyles, standardStyles } from 'office-ui-fabric-react/lib/components/Button/ButtonThemes';
-import React, { FC } from 'react';
+import { DefaultButton, IButtonProps, loadTheme, mergeStyles, concatStyleSets } from '@fluentui/react';
+import React from 'react';
 import { symplrTheme } from '../../services/theming';
 
-interface IProps {
-    isPrimaryButton: boolean,
-    label: string,
-    theme: ITheme
-}
+export const ButtonComponent: React.FC<IButtonProps> = (props) => {
+    const myProps = { ...props };
+    React.useEffect(() => {
+        if (myProps.theme) {
+            loadTheme(myProps.theme!)
+        }
+    });
 
-const ButtonComponent: FC<IProps> = (props) => {
-
-    const defaultButtonProps = {
-        text: props.label
-    };
-
-    const styleFn = props.isPrimaryButton ? primaryStyles : standardStyles;
+    myProps.split = !!myProps.split;
 
     return (
-        <DefaultButton {...defaultButtonProps} primary={props.isPrimaryButton} styles={styleFn(props.theme)}/>
+        <DefaultButton {...myProps} />
     );
 };
 
 ButtonComponent.defaultProps = {
-    isPrimaryButton: false,
-    label: '',
-    theme: symplrTheme
+    theme: symplrTheme,
+    primary: false,
+    text: undefined,
+    className: undefined,
+    disabled: undefined,
+    split: undefined,
+    menuProps: undefined,
+    styles: undefined,
+    role: undefined,
+    onClick: undefined
+    // For some reason properties that are not explicitly defaulted here are not passed through
 };
-
-export default ButtonComponent;
