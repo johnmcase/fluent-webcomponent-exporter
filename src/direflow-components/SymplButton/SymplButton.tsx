@@ -1,10 +1,11 @@
-import { DefaultButton, IButtonProps, loadTheme, mergeStyles, concatStyleSets } from '@fluentui/react';
+import { DefaultButton, IButtonProps, initializeIcons, loadTheme } from '@fluentui/react';
 import React from 'react';
 import { symplrTheme } from '../../services/theming';
 
 export const ButtonComponent: React.FC<IButtonProps> = (props) => {
     const myProps = { ...props };
     React.useEffect(() => {
+        initializeIcons();
         if (myProps.theme) {
             loadTheme(myProps.theme!)
         }

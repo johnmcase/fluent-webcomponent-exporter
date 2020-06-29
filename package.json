@@ -62,14 +62,14 @@
     "webcomponent"
   ],
   "license": "MIT",
-  "main": "build/direflowBundle.js",
+  "main": "build/main.js",
   "name": "fluent-webcomponent-exporter",
   "repository": {
     "type": "git",
     "url": "https://github.com/srm985/fluent-webcomponent-exporter"
   },
   "scripts": {
-    "build": "direflow-scripts build",
+    "build": "direflow-scripts build --split",
     "build:lib": "direflow-scripts build:lib",
     "start": "direflow-scripts start",
     "test": "direflow-scripts test"
